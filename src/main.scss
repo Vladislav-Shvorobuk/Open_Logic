@@ -1,4 +1,4 @@
- $bodyColor: white;
+ $bodyColor: #f8f9fb;
  $headerColor: #e9edf0;
  $containerColor: #fafbfc;
  $redColor: #ae3b44;
@@ -15,7 +15,7 @@
 
 body {
     display: flex;
-    flex-direction: row; 
+    flex-direction: column; 
     justify-content: center;
     background-color: $bodyColor;
 }
@@ -24,7 +24,7 @@ body {
     padding-left: 165px;
     padding-right: 165px;
     width: 1311px;
-    background-color: $containerColor;
+    // background-color: $containerColor;
 } 
 
 
@@ -33,6 +33,7 @@ body {
 
 @import "_reset.scss";
 @import "_header.scss";
+@import "_center_block.scss";
 @import "_footer.scss";
 
 @import './modules/_typography.scss';
