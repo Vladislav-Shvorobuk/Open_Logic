@@ -1,3 +1,25 @@
+ $bodyColor: #3c71a7;
+ $containerColor: #fafbfc;
+
+
+
+
+body {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    background-color: $bodyColor;
+}
+
+
+.container {
+    padding-left: 165px;
+    padding-right: 165px;
+    width: 1311px;
+    background-color: $containerColor;
+} 
+
+
 
 
 

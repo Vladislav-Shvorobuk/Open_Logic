@@ -1,5 +1,27 @@
 .header {
-    background-color: red;
-    width: 500px;
-    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // background-color: rgb(153, 189, 53);
+    .container {
+        display: flex;
+        flex-direction: column;
+        .header_top {
+            display: flex;
+            flex-direction: column;
+            padding-top: 35px;
+            padding-bottom: 45px;
+            background-color: rgb(122, 83, 83);
+         
+         }
+         .header_banner {
+            height: 100px;
+            background-color: grey;
+        }
+       
+
+
+    }
+    
+    
 }
