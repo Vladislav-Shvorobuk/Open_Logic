@@ -1,0 +1,49 @@
+.our_clients {
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        margin-bottom: 30px;
+
+        .clients {
+            padding-top: 20px;
+            font-family: Arial;
+            color:  #212121;
+            font-size: 18.01px;
+            font-weight: 600;
+            letter-spacing: -0.45px;
+        }
+        .creative_studio {
+            background: url("/images/spritesheet.png") no-repeat -5px -59px;
+            width: 92px;
+            height: 42px;
+        }
+        .creatif {
+            background: url("/images/spritesheet.png") no-repeat -86px -5px;
+            width: 66px;
+            height: 43px;
+
+        }
+        .av_studio {
+            background: url("/images/spritesheet.png")  no-repeat -5px -5px;
+            width: 39px;
+            height: 44px;
+  
+        }
+        .gofX {
+            background: url("/images/spritesheet.png") no-repeat -5px -111px;
+            width: 42px;
+            height: 21px;
+
+        }
+        .leaf_tech {
+            background: url("/images/spritesheet.png") no-repeat -119px -58px;
+            width: 90px;
+            height: 36px;
+            margin-right: 23px;
+
+        }
+    }
+}

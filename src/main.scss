@@ -1,6 +1,5 @@
  $bodyColor: #f8f9fb;
  $headerColor: #e9edf0;
- $containerColor: #fafbfc;
  $redColor: #ae3b44;
  $navFontSize: 13px;
  $titleFontSize: 24px;
@@ -24,7 +23,6 @@ body {
     padding-left: 165px;
     padding-right: 165px;
     width: 1311px;
-    // background-color: $containerColor;
 } 
 
 
@@ -34,6 +32,7 @@ body {
 @import "_reset.scss";
 @import "_header.scss";
 @import "_center_block.scss";
+@import "_our_clients.scss";
 @import "_footer.scss";
 
 @import './modules/_typography.scss';
