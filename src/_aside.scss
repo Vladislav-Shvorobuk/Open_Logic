@@ -14,6 +14,11 @@
         padding-bottom: 10px;
         background-image: url("/images/line_aside.png");
     }
+    .main_ul{
+        .red:hover {
+            color: #ae3b44;
+        }
+    }
     ul {
         li {
             border-bottom: 1px solid #ececec;
@@ -26,26 +31,64 @@
             padding-top: 13.5px;
             padding-bottom: 13.5px;
             padding-left: 15px;
+           
             
         }
+     
+      
         .emailTriangle {
             margin-left: 132px;
         }
       
-        .CRM {
+        .second_ul {
+            display: none;
             background-color: #f4f7f8;
+            margin-left: -30px;
+            
             li {
                 padding-left: 37px;
                 .full_features_triangle {
-                    margin-left: 120px;
+                    margin-left: 132px;
                 }
             }
           
-            
-            .email_hosting {
+            .third_ul {
+                display: none;
                 background-color: #eaeaea;
             }
+            .email_hosting:hover .third_ul {
+                display: block;
+                margin-left: -36px;
+                border-top: 1px solid #ececec;
+            }
+            .email_hosting:hover .email_hosting_container {
+                margin-bottom: 18px;
+                
+            }
+            .email_hosting:hover {
+                padding-bottom: 0px;
+                
+            }
+            .email_hosting:hover .turn {
+                transform: rotate(90deg);
+                
+            }
         }
+        .CRM:hover  .second_ul{
+            display: block;
+            border-top: 1px solid #ececec;
+
+        }
+        .CRM:hover .crm_container{
+           margin-bottom: 25px;
+        }
+        .CRM:hover .crm_triangle_bottom{
+            transform: rotate(90deg);
+         }
+        .CRM:hover {
+            padding-bottom: 0px;
+        }
+
         .crm_triangle_bottom {
             margin-left: 71px;
         }
@@ -69,6 +112,13 @@
         width: 4px;
         height: 7px;
     }
+
+    .turn {
+        margin-left: 44px; 
+    }
+   
+   
+
     .email_hosting_triagle_right {
         margin-right: 12px;
     }
@@ -79,10 +129,9 @@
         width: 7px;
         height: 4px;
     }
-    .reporting {
-        color: #ae3b44;
-    }
-   
+    // .reporting {
+    //     color: #ae3b44;
+    // }
 
 
 }
