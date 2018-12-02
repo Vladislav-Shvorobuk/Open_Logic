@@ -22,9 +22,9 @@
             .second_ul {
                 background-color: #212121;
                 position: absolute;
-                right: 490px;
-                top: 70px;
-                width: 130px;
+                right: 30.54%;
+                top: 75px;
+                width: 135px;
                 padding-left: 10px;
                 display: flex;
                 flex-direction: column;
@@ -39,7 +39,7 @@
                     font-size: 12px;
                     font-weight: 400;
                     letter-spacing: -0.12px;
-                    line-height: 36.557px;
+                    line-height: 29px;
 
                     li:hover {
                         font-weight: 900;
@@ -50,7 +50,7 @@
                 .third_ul {
                     background-color: #212121;
                     position: absolute;
-                    left: 136px;
+                    right: -107%;
                     top: 0px;
                     width: 140px;
                     padding-left: 10px;
@@ -74,7 +74,7 @@
                     content: "🢒";
                     color: black;
                     position: absolute;
-                    left: -6px;
+                    left: -4px;
                     top: -3px;
                     font-size: 18px;
 
@@ -86,8 +86,8 @@
                 content: "🢑";
                 color: black;
                 position: absolute;
-                left: 70px;
-                top: -23px;
+                left: 67px;
+                top: -35px;
                 font-size: 18px;
 
             }
