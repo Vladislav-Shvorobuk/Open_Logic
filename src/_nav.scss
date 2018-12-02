@@ -1,18 +1,21 @@
 .nav {
-    padding-top: 10px;
-    margin-right: 30px;
+    line-height: 50px;
+    margin-right: 37px;
+
     .main_ul {
+       
         display: flex;
         flex-direction: row; 
         justify-content: space-around;
      
         li {
+            display: inline-block;
             a {
                 font-family: Arial;
                 color:  #3c3c3c;
                 font-size: $navFontSize;
                 font-weight: 400;
-                letter-spacing: -0.26px;
+                letter-spacing: -0.4px;
                 margin-left: 25px;
             }
        

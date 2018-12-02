@@ -2,11 +2,12 @@
     .container {
         display: flex;
         flex-direction: row;
+        width: 100%;
 
         @import "_aside.scss";
    
         .main_info {
-            width: 726px;
+            width: 74.9323%;
             background-color: #fdfdfe;
             padding-top: 36px;
             padding-left: 23px;
