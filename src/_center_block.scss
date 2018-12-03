@@ -2,15 +2,16 @@
         display: flex;
         flex-direction: row;
         width: 100%;
+    
 
         @import "_aside.scss";
    
         .main_info {
             width: 74.9323%;
             background-color: #fdfdfe;
-            padding: 36px 23px 0 23px;
+            padding: 36px 0 0 0;
             border-bottom: 1px solid #ececec;
-            .content_1 {
+            .content_0 {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -42,6 +43,18 @@
                     text-align: center;
                     background-image: url("/images/date.png");
                   
+                }
+            }
+
+            .content_1 {
+                border-bottom: 1px solid #ececec;
+                .text {
+                    font-family: Arial;
+                    color:  #909293;
+                    font-size: 15px;
+                    font-weight: 400;
+                    // line-height: 5.713px;
+                    text-align: justify;
                 }
             }
 
