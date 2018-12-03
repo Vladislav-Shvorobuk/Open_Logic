@@ -2,6 +2,7 @@
     padding-top: 40px;
     width: 25.0677%;
     margin-bottom: 28px;
+    border: 1px solid #ececec;
     .title {
         font-family: Arial;
         color:  #212121;
@@ -17,6 +18,14 @@
     .main_ul {
         .red:hover {
             color: #ae3b44;
+        }
+        .online_store:after {
+            content: "🢒";
+            color:  #ae3b44;
+            font-size: 15px;
+            position: relative;
+            left: 55%;
+ 
         }
     }
     ul {
@@ -97,17 +106,7 @@
         background-color: #ae3b44;
         color: white;
     }
-    .triangle_right_red {
-        position: absolute;
-        left: 557px;
-        top: 470px;
-        border-color: #ae3b44;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 4px 0 4px 4px;
-        border-color: transparent transparent transparent #ae3b44;
-    }
+  
     .triagle_right_grey {
         width: 4px;
         height: 7px;

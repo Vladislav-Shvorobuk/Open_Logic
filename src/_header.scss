@@ -3,9 +3,6 @@
     flex-direction: column;
     justify-content: space-between;
 
-    .container {
-        display: flex;
-        flex-direction: column;
         .header_top {
             display: flex;
             flex-direction: row;
@@ -23,7 +20,5 @@
             @import "_nav.scss";
          
          }
-  
-    }
 }
 
