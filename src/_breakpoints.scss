@@ -3,7 +3,7 @@
 }
 @media only screen and (min-width:480px) {
     .global {
-        width:  480px;    
+        min-width:  480px;    
    
     }
     .container {
@@ -29,7 +29,7 @@
 
 @media only screen and (min-width:1311px) {
     .global {
-        min-width:  1311px;    
+        width:  1311px;    
    
     }
     .container {
