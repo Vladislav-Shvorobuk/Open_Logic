@@ -1,5 +1,5 @@
 .aside {
-    padding-top: 40px;
+    padding-top: 17px;
     width: 25.0677%;
     border: 1px solid #ececec;
     .title {
@@ -16,14 +16,6 @@
     .main_ul {
         .red:hover {
             color: #ae3b44;
-        }
-        .online_store:after {
-            content: "🢒";
-            color:  #ae3b44;
-            font-size: 17px;
-            position: relative;
-            left: 54%;
- 
         }
     }
     ul {
@@ -126,4 +118,12 @@
 
 
 
+}
+.aside::before {
+    content: "🢒";
+    color:  #ae3b44;
+    font-size: 17px;
+    position: relative;
+    left: 100%;
+    top: 146px;
 }
