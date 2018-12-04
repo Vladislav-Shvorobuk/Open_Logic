@@ -58,9 +58,15 @@
                 display: flex;        
                 color: #dedede;
                 margin-bottom: 25px;
-                font-size: 24px;
+                font-size: 26px;
                 a {
-                    margin-left: 9px;
+                    width: 24px;
+                    height: 24px;
+                    margin-left: 4.5px;
+                    cursor: pointer;
+                }
+                a:hover i {
+                    color: #5671a8; 
                 }
                
             }
