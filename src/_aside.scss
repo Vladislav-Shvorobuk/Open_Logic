@@ -17,6 +17,12 @@
         .red:hover {
             color: #ae3b44;
         }
+        .email {
+            position: relative;
+        }
+        .CRM {
+            position: relative;
+        }
     }
     ul {
         li {
@@ -25,14 +31,18 @@
             color:  #3c3c3c;
             font-size: 11.98px;
             font-weight: 400;
-            line-height: 11.8px;
+            line-height: 11px;
             text-align: left;
-            padding: 13.5px 0 13.5px 15px;
+            padding: 13.7px 0 13.7px 15px;
+            a {
+                padding-right: 15px;
+            }
         }
      
       
         .emailTriangle {
-            margin-left: 53%;
+            position: absolute;
+            right: 7%;
         }
       
         .second_ul {
@@ -43,13 +53,19 @@
             li {
                 padding-left: 37px;
                 .full_features_triangle {
-                    margin-left: 54%;
+                    position: absolute;
+                    right: 7%;
                 }
             }
           
             .third_ul {
                 display: none;
                 background-color: #eaeaea;
+                li {
+                    a {
+                        margin-left: 19px;
+                    }
+                }
             }
             .email_hosting:hover .third_ul {
                 display: block;
@@ -86,7 +102,8 @@
         }
 
         .crm_triangle_bottom {
-            margin-left: 30%;
+            position: absolute;
+            right: 7%;
         }
     }
     .online_store {
@@ -100,13 +117,15 @@
     }
 
     .turn {
-        margin-left: 12%; 
+        position: absolute;
+        right: 7%;
     }
    
    
 
     .email_hosting_triagle_right {
-        margin-right: 12px;
+        position: absolute;
+        left: 15%;
     }
     .email_hosting_triangle_bottom {
         margin-left: 28px;
