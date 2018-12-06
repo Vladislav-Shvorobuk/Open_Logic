@@ -18,12 +18,14 @@
                 padding-top: 19px;
                 padding-bottom: 26px;
                 padding-left: 32.1px;
+                padding-right: 20px;
                 display: flex;
                 flex-direction: row;
                 background-color: $redColor;
                 width: 74.9323%;           
                 .main_banner_content_title {
-                    width: 33.4539%;
+                    width: 34.4539%;
+                    padding-right: 25px;
                     h1 {
                      
                         font-family: Arial;
@@ -35,7 +37,7 @@
         
                 }
                 .main_banner_content_text {
-                    width: 66.5460%;
+                    width: 65.1460%;
                     p {
                         font-family: Arial;
                         color:  #222222;
