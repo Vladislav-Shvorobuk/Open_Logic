@@ -8,9 +8,13 @@
         display: flex;
         flex-direction: row; 
         justify-content: space-around;
+        .layouts {
+            position: relative;
+        }
      
         li {
             display: inline-block;
+         
             a {
                 font-family: Arial;
                 color:  #3c3c3c;
@@ -21,11 +25,12 @@
             }
        
             .second_ul {
+                
                 background-color: #212121;
                 position: absolute;
-                right: 30.54%;
-                top: 75px;
-                width: 135px;
+                left: -24px;
+                top: 40px;
+                width: 137px;
                 padding-left: 10px;
                 display: flex;
                 flex-direction: column;
@@ -51,9 +56,9 @@
                 .third_ul {
                     background-color: #212121;
                     position: absolute;
-                    right: -107%;
+                    right: -109%;
                     top: 0px;
-                    width: 140px;
+                    width: 144px;
                     padding-left: 10px;
                     opacity: 0;
                     display: flex;
@@ -66,7 +71,7 @@
                     content: "🢒";
                     color: white;
                     position: absolute;
-                    left: -1px;
+                    left: -2px;
                     top: -3px;
                     font-size: 18px;
 
@@ -75,7 +80,7 @@
                     content: "🢒";
                     color: black;
                     position: absolute;
-                    left: -4px;
+                    left: -6px;
                     top: -3px;
                     font-size: 18px;
 
