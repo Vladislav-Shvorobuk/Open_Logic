@@ -1,11 +1,17 @@
 .our_clients {
+        padding: 24px 0;
+
+       ul {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
-        padding-top: 18px;
-        padding-bottom: 30px;
-       
+        a {
+            cursor: pointer;
+        }
+        li:hover {
+            filter: grayscale(100%)
+        }
         .clients {
             
             font-family: Arial;
@@ -13,39 +19,49 @@
             font-size: 18px;
             font-weight: 600;
             letter-spacing: -1px;
-            padding-top: 12px;
-            margin-left: -17px;
-            line-height: 1.2;
               
             
         }
         .creative_studio {
-            background: url("/images/spritesheet.png") no-repeat -5px -59px;
-            width: 104px;
-	        height: 42px;
+            a {
+                display: inline-block;
+                background: url("/images/spritesheet.png") no-repeat -5px -59px;
+                width: 104px;
+                height: 42px;
+            }
         }
         .creatif {
-            background: url("/images/spritesheet.png") no-repeat -86px -5px;
-            width: 104px;
-	        height: 42px;
-
+            a {
+                display: inline-block;
+                background: url("/images/spritesheet.png") no-repeat -86px -5px;
+                width: 104px;
+                height: 42px;
+            }
         }
         .av_studio {
-            background: url("/images/spritesheet.png")  no-repeat -5px -5px;
-            width: 71px;
-            height: 44px;
+            a {
+                display: inline-block;
+                background: url("/images/spritesheet.png")  no-repeat -5px -5px;
+                width: 71px;
+                height: 44px;
+            }
         }
         .gofX {
-            background: url("/images/spritesheet.png") no-repeat -5px -111px;
-            width: 71px;
-            height: 29px;
-  
+            a {
+                display: inline-block;
+                background: url("/images/spritesheet.png") no-repeat -5px -111px;
+                width: 71px;
+                height: 29px;
+            }
         }
         .leaf_tech {
-            background: url("/images/spritesheet.png") no-repeat -119px -58px;
-            width: 90px;
-            height: 36px;
-            padding-top: -2px;
-
+            a {
+                display: inline-block;
+                background: url("/images/spritesheet.png") no-repeat -119px -58px;
+                width: 90px;
+                height: 36px;
+            }
         }
+       }
+       
 }
