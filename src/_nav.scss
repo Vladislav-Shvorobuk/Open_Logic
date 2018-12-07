@@ -1,19 +1,20 @@
 .nav {
-    line-height: 50px;
+    margin-left: 30.2%;
     margin-right: 37px;
-    max-width: 74.9323%;
+    width: 72.7323%;
+
 
     .main_ul {
-       
+        
         display: flex;
         flex-direction: row; 
-        justify-content: space-around;
+        padding: 11px 0;
+        justify-content: space-between;
         .layouts {
             position: relative;
         }
      
         li {
-            display: inline-block;
          
             a {
                 font-family: Arial;
@@ -21,7 +22,6 @@
                 font-size: $navFontSize;
                 font-weight: 400;
                 letter-spacing: -0.4px;
-                margin-left: 25px;
             
             }
        
@@ -29,8 +29,8 @@
                 
                 background-color: #212121;
                 position: absolute;
-                left: -24px;
-                top: 40px;
+                left: -46px;
+                top: 25px;
                 width: 137px;
                 padding-left: 10px;
                 display: flex;
@@ -93,8 +93,8 @@
                 content: "🢑";
                 color: black;
                 position: absolute;
-                left: 67px;
-                top: -35px;
+                left: 65px;
+                top: -23px;
                 font-size: 18px;
 
             }

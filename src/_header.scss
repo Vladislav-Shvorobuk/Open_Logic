@@ -1,26 +1,20 @@
 .header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
-
-        .header_top {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            padding-top: 35px;
-            padding-bottom: 37px;
-            .logo {
-                width: 25.0677%;
+    padding-top: 39px;
+    padding-bottom: 39px;
+        .logo {
+            width: 27.2677%;
                 
-                img {
-                    max-width: 100%;
-                    min-width: 115px;
+            img {
+                max-width: 100%;
+                min-width: 115px;
 
-                }
             }
+        }
 
-            @import "_nav.scss";
-         
-         }
+        @import "_nav.scss";
+                
 }
 
