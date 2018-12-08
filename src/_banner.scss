@@ -1,24 +1,24 @@
 
-.banner_block {
+.banner {
    
             display: flex;
             flex-direction: row;
             border-top: 7px solid;  
 
-            .banner{
+            picture {
                 background-image: url("/images/LayerSide_1.png");
                 background-repeat: no-repeat;
                 background-size: cover;
                 width: 25.0677%;
 
             }
-            .banner_content {
+            .content {
                 padding: 18.5px 32.1px 26px 32.1px;
                 display: flex;
                 flex-direction: row;
                 background-color: $redColor;
                 width: 74.9323%;           
-                .banner_content_title {
+                .content_title {
                     width: 31%;
                     margin-right: 27px;
                     h1 {
@@ -30,7 +30,7 @@
                         letter-spacing: -0.6px;
                     }
                 }
-                .banner_content_text {
+                .content_text {
                     width: 65%;
                     p {
                         font-family: Arial;

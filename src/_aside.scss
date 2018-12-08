@@ -35,24 +35,26 @@
         }
         .CRM {
             position: relative;
-            .crm_container:after {
-                content: "";
-                display: inline-block;
-                background-image: url("/images/triangle/triangle_right.png");
-                background-repeat: no-repeat;
-                position: absolute;
-                width: 10px;
-                height: 10px;
-                top: 16px;
-                left: 92%;
-                
-            }
-            .crm_container:hover::after{
-          
-                transform: rotate(90deg);
-                left: 90%;
-            }
         }
+        .CRM:after {
+            content: "";
+            display: inline-block;
+            background-image: url("/images/triangle/triangle_right.png");
+            background-repeat: no-repeat;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: 16px;
+            left: 92%;
+            
+        }
+        .CRM:hover::after{
+      
+            transform: rotate(90deg);
+            left: 90%;
+        }
+
+
     }
     ul {
         li {

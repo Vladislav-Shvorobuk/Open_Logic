@@ -7,12 +7,11 @@ $mainFontSize: 12px;
 
 
 
-.global {
+.site_wrapper {
    margin: 0 auto;
    display: flex;
    flex-direction: column;
    justify-content: center;
-
    background-image: url("/images/world_map.png");
    background-size: 100% 100%;
    background-repeat: no-repeat;
