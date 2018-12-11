@@ -85,6 +85,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         buttons.appendChild(children);
 
 
+        
+
+
 
         
         fragment.appendChild(div);
@@ -94,15 +97,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
     function searchNodeEl () {
+        let style = document.createElement("button");
+        
         search.addEventListener("click", function () {
             event.preventDefault();
             let text = input.value;
             input.value = ""
             if (document.querySelector(".redBorder")){
-                document.querySelector(".redBorder").classList.remove('redBorder');
+                let elWithClass = document.querySelector(".redBorder");
+                elWithClass.removeAttribute("style");
+                elWithClass.classList.remove('redBorder');
             }
             let elem = document.querySelector(text);
-            elem.setAttribute("class", "redBorder");
+            elem.classList.add("redBorder");
             document.querySelector(".redBorder").style.border = "4px solid red";
         });
     }
