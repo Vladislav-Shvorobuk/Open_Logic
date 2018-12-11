@@ -2,28 +2,33 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         let body = document.body;
         let fragment = document.createDocumentFragment();
+
         let search = document.createElement("button");
         let next = document.createElement("button");
         let previous = document.createElement("button");
         let parent = document.createElement("button");
-        let children = document.createElement("button");
+        let child = document.createElement("button");
         let input = document.createElement("input");
         let elem;
 
 
     function main () {
-        renderForm ();
+
+        renderBlock ();
         searchNodeEl();
         searchNextNodeEl();
+        searchPrevNodeEl();
+        searchParentNodeEl();
+        searchChildNodeEl();
     }
 
     main();
 
-    function renderForm () {
+    function renderBlock() {
       
         let div = document.createElement("div");
 
-        div.style.position = "absolute";
+        div.style.position = "fixed";
         div.style.padding = "20px";
         div.style.top = "20px";
         div.style.right = "1%";
@@ -66,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         next.style.marginRight = "6px";
         next.style.marginBottom ="5px";
         next.style.width = "48.3%";
+        next.disabled = true;
 
         // let previous = document.createElement("button");
         // previous.setAttribute("class", "btn");
@@ -73,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         previous.style.padding = "4px";
         previous.style.marginBottom ="5px";
         previous.style.width = "48.3%";
+        previous.disabled = true;
 
         // let parent = document.createElement("button");
         // parent.setAttribute("class", "btn");
@@ -80,12 +87,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
         parent.style.padding = "4px";
         parent.style.marginRight = "6px";
         parent.style.width = "48.3%";
+        parent.disabled = true;
 
         // let children = document.createElement("button");
         // children.setAttribute("class", "btn");
-        children.innerHTML = "children";
-        children.style.padding = "4px";
-        children.style.width = "48.3%";
+        child.innerHTML = "children";
+        child.style.padding = "4px";
+        child.style.width = "48.3%";
+        child.disabled = true;
 
         // buttons.classList[0].style.color = "red";
         // style.color = "red";
@@ -97,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         buttons.appendChild(next);
         buttons.appendChild(previous);
         buttons.appendChild(parent);
-        buttons.appendChild(children);
+        buttons.appendChild(child);
 
 
         
@@ -111,36 +120,148 @@ document.addEventListener("DOMContentLoaded", function(event) {
         
         search.addEventListener("click", function () {
             event.preventDefault();
+
             let text = input.value;
-            input.value = ""
+            input.value = "";
+            
             if (document.querySelector(".redBorder")){
                 let elWithClass = document.querySelector(".redBorder");
                 elWithClass.removeAttribute("style");
                 elWithClass.classList.remove('redBorder');
             }
-            elem = document.querySelector(text);
-            elem.classList.add("redBorder");
-            document.querySelector(".redBorder").style.border = "4px solid red";
+            if (text) {
+                elem = document.querySelector(text);
+                checkDisable(elem);
+                elem.classList.add("redBorder");
+                document.querySelector(".redBorder").style.border = "4px solid red";
+            }
         });
+        
     }
+
+    function checkDisable (elem) {
+
+        if (elem.nextElementSibling) {
+            next.disabled = false;
+        } else {
+            next.disabled = true;
+        }
+        if (elem.previousElementSibling) {
+            previous.disabled = false;
+        } else {
+            previous.disabled = true;
+        }
+        if (elem.parentElement){
+            parent.disabled = false;
+        }  else {
+            parent.disabled = true;
+        }
+        if (elem.children[0]) {
+            child.disabled = false;
+        }  else {
+            child.disabled = true;
+        }
+    }
+
+
     function searchNextNodeEl () {
         
         next.addEventListener("click", function () {
             event.preventDefault();
 
             if(document.querySelector(".redBorder")) {
-                let elWithClass = document.querySelector(".redBorder");
-                elWithClass.removeAttribute("style");
-                elWithClass.classList.remove('redBorder');
+                if (elem.nextElementSibling) {
+                    let elWithClass = document.querySelector(".redBorder");
+                    elWithClass.removeAttribute("style");
+                    elWithClass.classList.remove('redBorder');
+                }
             }
-            if (elem){
+            if (elem){      
+
                 if (elem.nextElementSibling){
                 elem = elem.nextElementSibling;
                 elem.classList.add("redBorder");
                 document.querySelector(".redBorder").style.border = "4px solid red";
+                } 
+            }
+            checkDisable(elem);
+        });
+        
+    }
+
+    function searchPrevNodeEl () {
+        
+        previous.addEventListener("click", function () {
+            event.preventDefault();
+
+            if(document.querySelector(".redBorder")) {
+                if (elem.previousElementSibling) {
+                    let elWithClass = document.querySelector(".redBorder");
+                    elWithClass.removeAttribute("style");
+                    elWithClass.classList.remove('redBorder');
+                }     
+            }
+            if (elem){
+                if (elem.previousElementSibling){
+                elem = elem.previousElementSibling;
+                elem.classList.add("redBorder");
+                document.querySelector(".redBorder").style.border = "4px solid red";
                 }
             }
+            checkDisable(elem);
+            console.log(elem);
+           
         });
+        
+    }
+
+    function searchParentNodeEl () {
+        
+        parent.addEventListener("click", function () {
+            event.preventDefault();
+
+            if(document.querySelector(".redBorder")) {
+                if (elem.parentElement) {
+                    let elWithClass = document.querySelector(".redBorder");
+                    elWithClass.removeAttribute("style");
+                    elWithClass.classList.remove('redBorder');
+                }
+            }
+            if (elem){
+           
+                if (elem.parentElement ){
+                     elem = elem.parentElement ;
+                     elem.classList.add("redBorder");
+                     document.querySelector(".redBorder").style.border = "4px solid red";
+                } 
+            }
+            checkDisable(elem);
+        });
+        
+    }
+    function searchChildNodeEl () {
+        
+        child.addEventListener("click", function () {
+            event.preventDefault();
+
+            if(document.querySelector(".redBorder")) {
+                if (elem.children) {
+                    let elWithClass = document.querySelector(".redBorder");
+                    elWithClass.removeAttribute("style");
+                    elWithClass.classList.remove('redBorder');
+                }    
+            }
+            if (elem){
+  
+                if (elem.children[0]){
+                    elem = elem.children[0];
+                    elem.classList.add("redBorder");
+                    document.querySelector(".redBorder").style.border = "4px solid red";
+                }
+            }
+            checkDisable(elem);
+        });
+        
     }
 
 
