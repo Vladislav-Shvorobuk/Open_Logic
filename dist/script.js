@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     let fragment = document.createDocumentFragment();
     let div = document.createElement("div");
     let topBlock = document.createElement("div");
+    let del = document.createElement("div");
 
     let search = document.createElement("button");
     let next = document.createElement("button");
@@ -23,10 +24,13 @@ function main () {
     searchParentNodeEl();
     searchChildNodeEl();
     dragAndDrop();
+    deleteModal();
     
 }
 
 main();
+
+
 
 function renderBlock() {
   
@@ -49,6 +53,20 @@ function renderBlock() {
 
     div.appendChild(topBlock);
 
+    del.innerHTML = "🞫";
+    del.width = "10px";
+    del.height = "10px";
+    del.border = "1px solid black";
+    del.fontSize = "16px";
+    del.style.position = "absolute";
+    del.style.top = "0";
+    del.style.right = "4px";
+    del.style.cursor = "pointer";
+
+    div.appendChild(del);
+
+    
+
 
     let h3 = document.createElement("h3");
     h3.innerHTML = "Search node element";
@@ -58,68 +76,50 @@ function renderBlock() {
 
     topBlock.appendChild(h3);
 
-    // let input = document.createElement("input");
-
     input.style.padding = "5px 10px";
-    // input.style.marginRight ="5px";
-    // input.style.marginBottom ="5px";
     input.style.border = "1px solid grey";
     input.style.width ="80%";   
     input.style.display ="block";   
-    input.style.margin = "0 auto 5px" 
-    // input.setAttribute("onmousedown", "return false");        
+    input.style.margin = "0 auto 5px"    
 
     div.appendChild(input);
 
     let buttons = document.createElement("div");
     buttons.style.width ="100%";    
 
-   
     search.innerHTML = "search";
     search.style.padding = "4px";
     search.style.display = "block";
-    search.style.width ="80%"; 
-    // search.style.marginBottom ="5px";   
-    search.style.margin ="0 auto 5px";   
- 
-    search.style.zIndex ="100";   
-    // search.removeEventListener("mousedown", pushMouseDown);   
+    search.style.width ="80%";  
+    search.style.margin ="0 auto 5px";  
+    search.style.cursor = "pointer"; 
 
-    // let next = document.createElement("button");
-    // next.setAttribute("class", "btn");
     next.innerHTML = "next";
     next.style.padding = "4px";
     next.style.margin = "0 9px 5px 10%";
-    // next.style.marginBottom ="5px";
     next.style.width = "38.3%";
+    next.style.cursor = "pointer"; 
     next.disabled = true;
 
-
-    // let previous = document.createElement("button");
-    // previous.setAttribute("class", "btn");
     previous.innerHTML = "previous";
     previous.style.padding = "4px";
     previous.style.marginBottom ="5px";
     previous.style.width = "38.3%";
+    previous.style.cursor = "pointer"; 
     previous.disabled = true;
 
-    // let parent = document.createElement("button");
-    // parent.setAttribute("class", "btn");
     parent.innerHTML = "parent";
     parent.style.padding = "4px";
     parent.style.margin = "0 9px 5px 10%";
     parent.style.width = "38.3%";
+    parent.style.cursor = "pointer"; 
     parent.disabled = true;
 
-    // let children = document.createElement("button");
-    // children.setAttribute("class", "btn");
     child.innerHTML = "children";
     child.style.padding = "4px";
     child.style.width = "38.3%";
+    child.style.cursor = "pointer"; 
     child.disabled = true;
-
-    // buttons.classList[0].style.color = "red";
-    // style.color = "red";
 
     div.appendChild(search);
     div.appendChild(buttons);
@@ -134,12 +134,18 @@ function renderBlock() {
    
 }
 
+function deleteModal (){
+    del.addEventListener("click", function (event) {
+        event.preventDefault(); 
+        body.removeChild(div);
+    })
+}
+
 
 function searchNodeEl () {
     
     search.addEventListener("click", function (event) {
         event.preventDefault();
-        // alert("asdasdsd");
 
         let text = input.value;
         input.value = "";
@@ -155,6 +161,94 @@ function searchNodeEl () {
             elem.classList.add("redBorder");
             document.querySelector(".redBorder").style.border = "4px solid red";
         }
+    });
+    
+}
+
+
+function searchNextNodeEl () {
+    
+    next.addEventListener("click", function () {
+        event.preventDefault();
+
+        if(document.querySelector(".redBorder") && elem.nextElementSibling) {
+
+                let elWithClass = document.querySelector(".redBorder");
+                elWithClass.removeAttribute("style");
+                elWithClass.classList.remove('redBorder');
+        }
+        if (elem && elem.nextElementSibling){      
+
+            elem = elem.nextElementSibling;
+            elem.classList.add("redBorder");
+            document.querySelector(".redBorder").style.border = "4px solid red";
+        }
+        checkDisable(elem);
+    });
+    
+}
+
+function searchPrevNodeEl () {
+    
+    previous.addEventListener("click", function () {
+        event.preventDefault();
+
+        if(document.querySelector(".redBorder") && elem.previousElementSibling) {
+
+                let elWithClass = document.querySelector(".redBorder");
+                elWithClass.removeAttribute("style");
+                elWithClass.classList.remove('redBorder');  
+        }
+        if (elem && elem.previousElementSibling){
+
+            elem = elem.previousElementSibling;
+            elem.classList.add("redBorder");
+            document.querySelector(".redBorder").style.border = "4px solid red";
+        }
+        checkDisable(elem);        
+    });
+    
+}
+
+function searchParentNodeEl () {
+    
+    parent.addEventListener("click", function () {
+        event.preventDefault();
+
+        if(document.querySelector(".redBorder") && elem.parentElement) {
+                let elWithClass = document.querySelector(".redBorder");
+                elWithClass.removeAttribute("style");
+                elWithClass.classList.remove('redBorder');
+        }
+        if (elem && elem.parentElement ){
+       
+                 elem = elem.parentElement ;
+                 elem.classList.add("redBorder");
+                 document.querySelector(".redBorder").style.border = "4px solid red";
+        }
+        checkDisable(elem);
+    });
+}
+
+function searchChildNodeEl () {
+    
+    child.addEventListener("click", function () {
+        event.preventDefault();
+
+        if(document.querySelector(".redBorder") && elem.children) {
+
+                let elWithClass = document.querySelector(".redBorder");
+                elWithClass.removeAttribute("style");
+                elWithClass.classList.remove('redBorder');
+
+        }
+        if (elem && elem.children[0]){
+
+                elem = elem.children[0];
+                elem.classList.add("redBorder");
+                document.querySelector(".redBorder").style.border = "4px solid red";
+        }
+        checkDisable(elem);
     });
     
 }
@@ -181,106 +275,6 @@ function checkDisable (elem) {
     }  else {
         child.disabled = true;
     }
-}
-
-
-function searchNextNodeEl () {
-    
-    next.addEventListener("click", function () {
-        event.preventDefault();
-
-        if(document.querySelector(".redBorder")) {
-            if (elem.nextElementSibling) {
-                let elWithClass = document.querySelector(".redBorder");
-                elWithClass.removeAttribute("style");
-                elWithClass.classList.remove('redBorder');
-            }
-        }
-        if (elem){      
-
-            if (elem.nextElementSibling){
-            elem = elem.nextElementSibling;
-            elem.classList.add("redBorder");
-            document.querySelector(".redBorder").style.border = "4px solid red";
-            } 
-        }
-        checkDisable(elem);
-    });
-    
-}
-
-function searchPrevNodeEl () {
-    
-    previous.addEventListener("click", function () {
-        event.preventDefault();
-
-        if(document.querySelector(".redBorder")) {
-            if (elem.previousElementSibling) {
-                let elWithClass = document.querySelector(".redBorder");
-                elWithClass.removeAttribute("style");
-                elWithClass.classList.remove('redBorder');
-            }     
-        }
-        if (elem){
-            if (elem.previousElementSibling){
-            elem = elem.previousElementSibling;
-            elem.classList.add("redBorder");
-            document.querySelector(".redBorder").style.border = "4px solid red";
-            }
-        }
-        checkDisable(elem);        
-    });
-    
-}
-
-function searchParentNodeEl () {
-    
-    parent.addEventListener("click", function () {
-        event.preventDefault();
-
-        if(document.querySelector(".redBorder")) {
-            if (elem.parentElement) {
-                let elWithClass = document.querySelector(".redBorder");
-                elWithClass.removeAttribute("style");
-                elWithClass.classList.remove('redBorder');
-            }
-        }
-        if (elem){
-       
-            if (elem.parentElement ){
-                 elem = elem.parentElement ;
-                 elem.classList.add("redBorder");
-                 document.querySelector(".redBorder").style.border = "4px solid red";
-            } 
-        }
-        checkDisable(elem);
-    });
-    
-}
-
-function searchChildNodeEl () {
-    
-    child.addEventListener("click", function () {
-        event.preventDefault();
-
-        if(document.querySelector(".redBorder")) {
-            if (elem.children) {
-                let elWithClass = document.querySelector(".redBorder");
-                elWithClass.removeAttribute("style");
-                elWithClass.classList.remove('redBorder');
-            }    
-        }
-        if (elem){
-
-            if (elem.children[0]){
-                elem = elem.children[0];
-                elem.classList.add("redBorder");
-                document.querySelector(".redBorder").style.border = "4px solid red";
-            }
-        }
-        checkDisable(elem);
-    });
-    
 }
 
 
@@ -329,10 +323,6 @@ function dragAndDrop () {
 
 
 }
-
-
-
-
 
 
 
