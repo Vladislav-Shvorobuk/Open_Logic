@@ -1,8 +1,23 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-    let body = document.body;
-    let fragment = document.createDocumentFragment();
-    let search = document.createElement("button");
-    let input = document.createElement("input");
+
+        let body = document.body;
+        let fragment = document.createDocumentFragment();
+        let search = document.createElement("button");
+        let next = document.createElement("button");
+        let previous = document.createElement("button");
+        let parent = document.createElement("button");
+        let children = document.createElement("button");
+        let input = document.createElement("input");
+        let elem;
+
+
+    function main () {
+        renderForm ();
+        searchNodeEl();
+        searchNextNodeEl();
+    }
+
+    main();
 
     function renderForm () {
       
@@ -44,30 +59,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
         search.style.width ="100%"; 
         search.style.marginBottom ="5px";   
 
-        let next = document.createElement("button");
-        next.setAttribute("class", "btn");
+        // let next = document.createElement("button");
+        // next.setAttribute("class", "btn");
         next.innerHTML = "next";
         next.style.padding = "4px";
         next.style.marginRight = "6px";
         next.style.marginBottom ="5px";
         next.style.width = "48.3%";
 
-        let previous = document.createElement("button");
-        previous.setAttribute("class", "btn");
+        // let previous = document.createElement("button");
+        // previous.setAttribute("class", "btn");
         previous.innerHTML = "previous";
         previous.style.padding = "4px";
         previous.style.marginBottom ="5px";
         previous.style.width = "48.3%";
 
-        let parent = document.createElement("button");
-        parent.setAttribute("class", "btn");
+        // let parent = document.createElement("button");
+        // parent.setAttribute("class", "btn");
         parent.innerHTML = "parent";
         parent.style.padding = "4px";
         parent.style.marginRight = "6px";
         parent.style.width = "48.3%";
 
-        let children = document.createElement("button");
-        children.setAttribute("class", "btn");
+        // let children = document.createElement("button");
+        // children.setAttribute("class", "btn");
         children.innerHTML = "children";
         children.style.padding = "4px";
         children.style.width = "48.3%";
@@ -86,10 +101,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
         
-
-
-
-        
         fragment.appendChild(div);
         body.appendChild(fragment);
        
@@ -97,7 +108,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
     function searchNodeEl () {
-        let style = document.createElement("button");
         
         search.addEventListener("click", function () {
             event.preventDefault();
@@ -108,15 +118,36 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 elWithClass.removeAttribute("style");
                 elWithClass.classList.remove('redBorder');
             }
-            let elem = document.querySelector(text);
+            elem = document.querySelector(text);
             elem.classList.add("redBorder");
             document.querySelector(".redBorder").style.border = "4px solid red";
         });
     }
+    function searchNextNodeEl () {
+        
+        next.addEventListener("click", function () {
+            event.preventDefault();
+
+            if(document.querySelector(".redBorder")) {
+                let elWithClass = document.querySelector(".redBorder");
+                elWithClass.removeAttribute("style");
+                elWithClass.classList.remove('redBorder');
+            }
+            if (elem){
+                if (elem.nextElementSibling){
+                elem = elem.nextElementSibling;
+                elem.classList.add("redBorder");
+                document.querySelector(".redBorder").style.border = "4px solid red";
+                }
+            }
+        });
+    }
+
+
+
  
 
-    renderForm ();
-    searchNodeEl();
+
 
 
 
