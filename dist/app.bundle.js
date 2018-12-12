@@ -77,7 +77,7 @@ eval("// style-loader: Adds some css to the DOM by adding a <style> tag\n\n// lo
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n__webpack_require__(0);\n\n// class Car {\n//   manufacturer(car) {\n//     document.write(`I have a ${car}`)\n//   }\n// }\n\n// const bmw = new Car;\n\n// bmw.manufacturer('BMW')//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvYXBwLmpzPzdhYzkiXSwibmFtZXMiOlsicmVxdWlyZSJdLCJtYXBwaW5ncyI6Ijs7QUFBQUEsbUJBQU9BLENBQUMsQ0FBUjs7QUFFQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVBOztBQUVBIiwiZmlsZSI6IjEuanMiLCJzb3VyY2VzQ29udGVudCI6WyJyZXF1aXJlKCcuL21haW4uc2NzcycpXG5cbi8vIGNsYXNzIENhciB7XG4vLyAgIG1hbnVmYWN0dXJlcihjYXIpIHtcbi8vICAgICBkb2N1bWVudC53cml0ZShgSSBoYXZlIGEgJHtjYXJ9YClcbi8vICAgfVxuLy8gfVxuXG4vLyBjb25zdCBibXcgPSBuZXcgQ2FyO1xuXG4vLyBibXcubWFudWZhY3R1cmVyKCdCTVcnKVxuXG5cbi8vIFdFQlBBQ0sgRk9PVEVSIC8vXG4vLyAuL3NyYy9hcHAuanMiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///1\n");
+eval("\n\n__webpack_require__(0);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvYXBwLmpzPzdhYzkiXSwibmFtZXMiOlsicmVxdWlyZSJdLCJtYXBwaW5ncyI6Ijs7QUFBQUEsbUJBQU9BLENBQUMsQ0FBUiIsImZpbGUiOiIxLmpzIiwic291cmNlc0NvbnRlbnQiOlsicmVxdWlyZSgnLi9tYWluLnNjc3MnKVxuXG5cblxuLy8gV0VCUEFDSyBGT09URVIgLy9cbi8vIC4vc3JjL2FwcC5qcyJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///1\n");
 
 /***/ }),
 /* 2 */
